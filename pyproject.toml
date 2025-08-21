@@ -54,18 +54,8 @@ qasync = { git = "https://github.com/dnadlinger/qasync.git", branch = "windows-q
 # build-backend = "hatchling.build"
 
 [build-system]
-requires = ["setuptools>=64", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
-
-# [tool.setuptools]
-# packages = ["ndscan"]
-
-# [tool.setuptools.dynamic]
-# version = {attr = "ndscan.__version__"}
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["ndscan*"]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poe.tasks]
 docs = "make -C $POE_ROOT/docs html"
